@@ -33,6 +33,14 @@ class Application:
         wd = self.wd
         wd.get("https://apparel-uk.local:9002/ucstorefront/en")
         wd.find_element_by_css_selector(".page-homepage.pageType-ContentPage")
+        wd.find_element_by_class_name()
+
+
+    def open_basket_page(self):
+        wd = self.wd
+        wd.get("https://apparel-uk.local:9002/ucstorefront/en")
+        wd.find_element_by_css_selector("")
+
 
     def destroy(self):
         self.wd.quit()
