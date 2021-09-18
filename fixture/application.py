@@ -16,6 +16,7 @@ class Application:
     def __init__(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--ignore-certificate-errors')
+        options.add_argument('--window-size=1280,1024')
         self.wd = webdriver.Chrome(executable_path=PATH, chrome_options=options)
         self.wd.implicitly_wait(10)
         self.basket = BasketHelper(self)
@@ -39,10 +40,12 @@ class Application:
 
     def add_to_basket(self):
         wd = self.wd
+        wd.get(URL)
         self.basket.add_to_basket()
 
     def verify_id_basket(self):
         wd = self.wd
+        wd.get(URL)
         self.basket.verify_id_basket()
 
     def verify_new_cart(self):

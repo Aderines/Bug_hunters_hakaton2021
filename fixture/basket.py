@@ -8,19 +8,14 @@ class BasketHelper:
 
     def add_to_basket(self):
         self.wd = self.app.wd
-        self.wd.find_element_by_xpath("/html/body/main/header/nav[3]/div/ul[2]/li[1]/span[1]/a").click()
-        self.wd.find_element_by_class_name(
-            "btn btn-primary btn-block glyphicon glyphicon-shopping-cart js-enable-btn").click()
-        self.wd.find_element_by_class_name("btn btn-primary btn-block add-to-cart-button").click()
-
+        self.wd.find_element_by_css_selector(".yCmsComponent.nav__link.js_nav__link").click()
+        self.wd.find_element_by_css_selector(".btn.btn-primary.btn-block.glyphicon.glyphicon-shopping-cart.js-enable-btn").click()
+        self.wd.find_element_by_css_selector(".btn.btn-primary.btn-block.add-to-cart-button").click()
 
     def verify_id_basket(self, id):
         self.wd = self.app.wd
-        id = self.wd.find_element_by_class_name(f"cart__{id}")
-        if len(id) == 8:
-            return id
-        else:
-            print("Invalid ID length")
+        return self.wd.find_element_by_css_selector(f"cart__{id}").text
+
 
     def help_popup(self):
         self.wd = self.app.wd
