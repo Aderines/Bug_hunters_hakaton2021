@@ -36,10 +36,13 @@ class Application:
         wd.find_element_by_class_name()
 
 
-    def open_basket_page(self):
+    def add_to_basket(self):
         wd = self.wd
-        wd.get("https://apparel-uk.local:9002/ucstorefront/en")
-        wd.find_element_by_css_selector("")
+        self.basket.add_to_basket()
+
+    def verify_id_basket(self):
+        wd = self.wd
+        self.basket.verify_id_basket()
 
 
     def destroy(self):
