@@ -16,7 +16,7 @@ class Application:
     def __init__(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--ignore-certificate-errors')
-        options.add_argument('--window-size=1280,1024')
+        options.add_argument('--start-maximized')
         self.wd = webdriver.Chrome(executable_path=PATH, chrome_options=options)
         self.wd.implicitly_wait(10)
         self.basket = BasketHelper(self)
@@ -34,22 +34,23 @@ class Application:
             return False
 
     def open_home_page(self):
-        wd = self.wd
-        wd.get(URL)
-        wd.find_element_by_css_selector(".page-homepage.pageType-ContentPage")
+        self.wd.get(URL)
+        self.home.open_start_page()
 
     def add_to_basket(self):
-        wd = self.wd
-        wd.get(URL)
+        self.wd.get(URL)
         self.basket.add_to_basket()
 
-    def verify_id_basket(self):
-        wd = self.wd
-        wd.get(URL)
+    def check_basket_items(self):
+        self.wd.get(URL)
+        self.wd.check_basket_items()
+
+    def verify_id_basket(self, id):
+        self.wd.get(URL)
         self.basket.verify_id_basket()
 
     def verify_new_cart(self):
-        wd = self.wd
+        self.wd.get(URL)
         self.basket.verify_new_cart()
 
     def destroy(self):
