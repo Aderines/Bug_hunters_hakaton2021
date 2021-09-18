@@ -11,6 +11,7 @@ class Application:
 
     def __init__(self):
         options = webdriver.ChromeOptions()
+        options.add_argument('--start-maximized')
         options.add_argument('--ignore-certificate-errors')
         self.wd = webdriver.Chrome(chrome_options=options)
         self.wd.implicitly_wait(10)

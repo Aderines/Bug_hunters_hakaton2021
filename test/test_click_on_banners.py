@@ -18,3 +18,4 @@ def test_click_on_banner_brand(app):
     app.home.open_start_page()
     app.home.click_on_banners("Our brand range")
     assert app.home.get_text_cataloge_name() == "BRANDS"
+
