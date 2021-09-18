@@ -10,7 +10,9 @@ from fixture.product import ProductHelper
 class Application:
 
     def __init__(self):
-        self.wd = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_argument('--ignore-certificate-errors')
+        self.wd = webdriver.Chrome(chrome_options=options)
         self.wd.implicitly_wait(10)
         self.basket = BasketHelper(self)
         self.categories = CategoriesHelper(self)
