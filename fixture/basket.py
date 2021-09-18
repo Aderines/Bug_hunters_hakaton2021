@@ -13,6 +13,7 @@ class BasketHelper:
             "btn btn-primary btn-block glyphicon glyphicon-shopping-cart js-enable-btn").click()
         self.wd.find_element_by_class_name("btn btn-primary btn-block add-to-cart-button").click()
 
+
     def verify_id_basket(self, id):
         self.wd = self.app.wd
         id = self.wd.find_element_by_class_name(f"cart__{id}")
@@ -37,4 +38,6 @@ class BasketHelper:
         if self.wd.current_url == "https://apparel-uk.local:9002/ucstorefront/en/login":
             return True
 
-
+    def verify_continue_shopping(self):
+        self.ws = self.app.wd
+        self.wd.find_element_by_class_name
