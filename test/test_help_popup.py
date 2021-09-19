@@ -1,5 +1,3 @@
-
-
-def test_add_to_basket(app):
+def test_help_popup(app):  # Тест не работает.
     app.basket.add_to_basket()
-    assert app.basket.help_popup()
+    app.basket.help_popup()

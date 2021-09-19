@@ -1,8 +1,5 @@
-def test_verify_id_basket(app):
+def test_verify_id_basket(app):  # Тест работает.
+    expected = 8
     app.basket.add_to_basket()
-    app.basket.verify_id_basket(id)
-    assert app.basket.verify_id_basket(id) == 8
-
-
-def test_help_popup(app):
-    assert app.basket.help_popup()
+    actual = app.basket.verify_id_basket()
+    assert actual == expected

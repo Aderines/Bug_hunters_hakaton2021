@@ -41,17 +41,26 @@ class Application:
         self.wd.get(URL)
         self.basket.add_to_basket()
 
-    def check_basket_items(self):
+    def delete_from_basket(self):
         self.wd.get(URL)
-        self.wd.check_basket_items()
+        self.basket.delete_basket()
+
+    def check_basket(self):
+        self.wd.get(URL)
+        self.basket.check_basket()
 
     def verify_id_basket(self, id):
         self.wd.get(URL)
-        self.basket.verify_id_basket()
+        self.basket.verify_id_basket(id)
 
     def verify_new_cart(self):
         self.wd.get(URL)
         self.basket.verify_new_cart()
+
+    def help_popup(self):
+        self.wd.get(URL)
+        self.basket.help_popup()
+        # self.wd.find_element_by_id()
 
     def destroy(self):
         self.wd.quit()

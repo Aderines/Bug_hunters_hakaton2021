@@ -1,5 +1,5 @@
-
-
-def test_basket_items(app):
+def test_check_basket(app):  # Тест работает.
+    expected = 1
     app.basket.add_to_basket()
-    app.basket.check_basket_items()
+    actual = app.basket.check_basket()
+    assert actual == expected
