@@ -1,4 +1,3 @@
-
 class ProductHelper:
 
     def __init__(self, app):
