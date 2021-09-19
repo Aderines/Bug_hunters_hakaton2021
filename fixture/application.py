@@ -60,7 +60,10 @@ class Application:
     def help_popup(self):
         self.wd.get(URL)
         self.basket.help_popup()
-        # self.wd.find_element_by_id()
+
+    def verify_continue_shopping(self):
+        self.wd.get(URL)
+        self.basket.verify_continue_shopping()
 
     def destroy(self):
         self.wd.quit()

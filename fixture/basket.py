@@ -45,4 +45,12 @@ class BasketHelper:
             return True
 
     def verify_continue_shopping(self):
-        self.wd.find_element_by_class_name("")
+        self.wd.find_element_by_css_selector(".yCmsComponent.nav__link.js_nav__link").click()
+        self.wd.find_element_by_css_selector(
+            ".btn.btn-primary.btn-block.glyphicon.glyphicon-shopping-cart.js-enable-btn").click()
+        self.wd.find_element_by_css_selector(".btn.btn-primary.btn-block.add-to-cart-button").click()
+        self.wd.find_element_by_css_selector(
+            ".btn.btn-default.btn-block.btn--continue-shopping.js-continue-shopping-button").click()
+        return self.wd.current_url
+
+
