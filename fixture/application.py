@@ -12,6 +12,7 @@ class Application:
     def __init__(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--ignore-certificate-errors')
+        # options.headless = True
         self.wd = webdriver.Chrome(chrome_options=options)
         self.wd.implicitly_wait(10)
         self.basket = BasketHelper(self)

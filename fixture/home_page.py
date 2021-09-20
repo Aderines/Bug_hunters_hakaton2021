@@ -22,4 +22,3 @@ class HomeHelper:
     def get_text_cataloge_name(self):
         self.wd.find_element_by_css_selector(".breadcrumb .active")
         return self.wd.find_element_by_css_selector(".breadcrumb .active").text
-
